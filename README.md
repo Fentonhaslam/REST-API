@@ -4,14 +4,13 @@ Creating a Simple REST Application with Node.js
 Introduction
 This document provides step-by-step instructions for creating a simple REST application using Node.js. The application will have two endpoints: /login and /secret. Additionally, it will be instrumented with Prometheus metrics and Dockerized for easy deployment.
 
+# Running the Application with Docker
+
 Prerequisites
-Node.js installed on your system
 Docker installed on your system
 
-Running the Application with Docker
-Prerequisites
-Docker installed on your system
-Steps
+## Steps
+
 Clone the Repository
 
 Clone this repository to your local machine:
@@ -60,10 +59,13 @@ Access Prometheus Metrics
 
 You can access Prometheus metrics at http://localhost:3000/metrics.
 
-Running the Application Without Docker
+# Running the Application Without Docker
+
 Prerequisites
 Node.js installed on your system
-Steps
+
+## Steps
+
 Clone the Repository
 
 Clone this repository to your local machine:
