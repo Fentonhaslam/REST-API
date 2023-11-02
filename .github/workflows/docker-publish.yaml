@@ -1,0 +1,27 @@
+name: Docker Build & Publish
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Login to Docker Hub
+        run: |
+          echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+        env:
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+
+      - name: Build Docker Image
+        run: docker build -t your-dockerhub-username/your-app-name:latest .
+        working-directory: ./path/to/app
+
+      - name: Push Docker Image to Docker Hub
+        run: docker push your-dockerhub-username/your-app-name:latest
